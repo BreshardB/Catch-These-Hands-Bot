@@ -1,0 +1,22 @@
+{
+  "name": "catch-these-hands-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BreshardB/Catch-These-Hands-Bot.git"
+  },
+  "author": "Bre'Shard Busby",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BreshardB/Catch-These-Hands-Bot/issues"
+  },
+  "homepage": "https://github.com/BreshardB/Catch-These-Hands-Bot#readme",
+  "dependencies": {
+    "discord.js": "^11.3.0"
+  }
+}
