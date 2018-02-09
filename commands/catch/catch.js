@@ -1,4 +1,7 @@
 const commando = require('discord.js-commando');
+const jsonfile = require('jsonfile');
+
+const file = './json/phrases.json';
 
 class CatchTheseHandsCommand extends commando.Command {
     constructor(client) {
@@ -6,14 +9,30 @@ class CatchTheseHandsCommand extends commando.Command {
             name: 'catch',
             group: 'catch',
             memberName: 'catch',
-            description: 'Tells a person to catch these hands'
+            description: 'Tells a person to catch these hands',
+            args: [
+                {
+                    key: 'type',
+                    prompt: 'What text would you like the bot to say?',
+                    type: 'string'
+                }//,
+                // {
+                //     key: 'user',
+                //     prompt: 'Which user is about to get these hands?',
+                //     type: 'user'
+                // }
+            ]
         });
+
+
     }
 
-    async run(message, args) {
-        var roll = Math.floor(Math.random()*6) + 1;
-        message.channel.send("You rolled a " + roll);
+    async run(message, {type}) {
+        jsonfile.readFile(file, function(err, obj) {
+            console.log(obj);
+        })
+        //return message.say(type);
     }
 }
 
-module.exports = DiceRollCommand;
+module.exports = CatchTheseHandsCommand;

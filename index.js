@@ -5,14 +5,8 @@ const path = require('path')
 const bot = new commando.Client();
 
 bot.registry
-    .registerGroup('catch', 'Command Group');
-    .registerDefaults();
+    .registerGroup('catch', 'Command Group')
+    .registerDefaults()
     .registerCommandsIn(path.join(__dirname, "commands"));
-
-bot.on('message', (message) => {
-    if(message.content == "ping") {
-        message.channel.send("pong");
-    }
-});
 
 bot.login('NDExMzQwNDQzMTQyMzI0MjI3.DV6SMA.ZdVOgNEOJsndyL1G8Txs1ui9CCU');
