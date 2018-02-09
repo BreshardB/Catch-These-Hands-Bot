@@ -10,6 +10,7 @@ class CatchTheseHandsCommand extends commando.Command {
             group: 'catch',
             memberName: 'catch',
             description: 'Tells a person to catch these hands',
+            clientPermissions: ['MANAGE_MESSAGES'],
             args: [
                 {
                     key: 'type',
@@ -29,7 +30,9 @@ class CatchTheseHandsCommand extends commando.Command {
 
     async run(message, {type}) {
         jsonfile.readFile(file, function(err, obj) {
-            console.log(obj);
+            var size = obj.text[2].message;
+
+            message.channel.send(size);
         })
         //return message.say(type);
     }
