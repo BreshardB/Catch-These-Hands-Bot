@@ -1,5 +1,13 @@
 const Discord = require('discord.js');
-const bot = new Discord.Client();
+const commando = require('discord.js-commando');
+const path = require('path')
+
+const bot = new commando.Client();
+
+bot.registry
+    .registerGroup('catch', 'Command Group');
+    .registerDefaults();
+    .registerCommandsIn(path.join(__dirname, "commands"));
 
 bot.on('message', (message) => {
     if(message.content == "ping") {
