@@ -2,7 +2,9 @@
     "text": [
         {"message" : "Get ready to catch these hands!"},
         {"message" : "These hands are rated E for Everyone!"},
-        {"message" : "Gonna need a glove to catch these hands!"}
+        {"message" : "Gonna need a glove to catch these hands!"},
+        {"message" : "Better find a net to catch these hands!"},
+        {"message" : "You can catch these hands with an unlimited time offer!"}
     ],
 
     "meme": [
