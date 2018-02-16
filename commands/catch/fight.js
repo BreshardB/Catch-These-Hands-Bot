@@ -1,13 +1,13 @@
 const commando = require('discord.js-commando');
 const jsonfile = require('jsonfile');
+const fs = require('fs');
 
-const file = './json/phrases.json';
+const path = './image/fight-me/';
 
 class FightMeCommand extends commando.Command {
     constructor(client) {
         super(client, {
             name: 'fightme',
-            aliases: ['fightMe'],
             group: 'catch',
             memberName: 'fightme',
             description: 'Tells a person to catch these hands',
@@ -16,14 +16,18 @@ class FightMeCommand extends commando.Command {
     }
 
     async run(message) {
-        jsonfile.readFile(file, function(err, obj) {
-            var size = obj.text.length;
+        fs.readdir(path, function(err, items) {
+            var size = items.length;
 
             var index = Math.floor(Math.random()*size);
 
-            message.channel.send(obj.text[index].message);
-        })
-        //return message.say(type);
+            message.channel.send("",
+            {
+                files: [
+                    path+items[index]
+                ]
+            });
+        });
     }
 }
 
